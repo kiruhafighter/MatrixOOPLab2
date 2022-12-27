@@ -38,13 +38,15 @@ void Matrix::generate_1() {
         }
     }
 }
-double Matrix::get(int i, int j) const {
+double Matrix::get(int i, int j)const {
     return m_values[i * m_cols + j];
 }
-bool Matrix::can_multiply(const Matrix& other) {
+bool Matrix::can_multiply(const Matrix& other) 
+{
     return m_rows == other.m_cols;
 }
-Matrix Matrix::multiply(const Matrix& other) {
+Matrix Matrix::multiply(const Matrix& other) 
+{
     if (false == can_multiply(other)) {
         Matrix empty;
         return empty;
@@ -156,4 +158,15 @@ void Matrix::multiply(double value) {
         m_values[i] *= value;
     }
 }
+
+void Matrix::operator()(int rows, int cols) {
+    if (get(rows, cols) != NULL) {
+        m_values[rows * m_cols + cols] = 9;
+    }
+    else {
+        cout << "Err" << endl;
+    }
+}
+
+
 

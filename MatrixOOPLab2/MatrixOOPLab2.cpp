@@ -13,14 +13,15 @@ int main()
     cout << "enter m2 matrix: " << endl;
     m2.read_keyboard();
     cout << "your m1 matrix: " << endl;
+    //псевдозмінна 
+    m1(1, 1);
     m1.print_screen();
     cout << "your m2 matrix: " << endl;
     m2.print_screen();
-
     Matrix mul = m1.multiply(m2);
     cout << "m1 * m2:" << endl;
     mul.print_screen();
-    mul.write_to_file("C:\\Users\\kiruhafighter\\Desktop\\2.txt");
-    mul.read_from_file("C:\\Users\\kiruhafighter\\Desktop\\1.txt");
+    mul.write_to_file("C:\\Users\\kiruhafighter\\Desktop\\1.txt");
+    mul.read_from_file("C:\\Users\\kiruhafighter\\Desktop\\2.txt");
     return 0;
 }
